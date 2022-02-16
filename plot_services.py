@@ -7,20 +7,6 @@ top_data = {}
 with open("./15k_dune_analytics.json", "r") as file:
     top_data = json.load(file)
     top_data = {data['data']['to']: data['data']['rank'] for data in top_data}
-# folder_data = "/Users/nguyenquangthang/Documents/thesis/tamara_results"
-# files = []
-# for r, d, f in os.walk(folder_data):
-#     for file in f:
-#         files.append(os.path.join(r, file))
-# print("Number wasted contract", len(files), "/ all file: 4615")
-# data_thang = {}
-#
-# for i in range(0, len(files)):
-#     with open(files[i], "r") as file:
-#         _data = json.load(file)
-#         data_thang[f[i][:-5]] = _data
-
-# print("Number detected vulnerability", sum([len(x['results']) for x in data_thang.values()]))
 mapping = {
     "loop-calculation": "RCL",
     "state-data-arrangement ": "STADA",
@@ -28,7 +14,7 @@ mapping = {
     "external-function ": "DLFV",
     "immutable-restrict-modification ": "ISV",
     "constant-restrict-modification  ": "CSV",
-    "loop-duplication": "LF",
+    "loop-duplication": "LC",
     "struct-data-arrangement ": "MAS"
 }
 
